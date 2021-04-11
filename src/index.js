@@ -105,18 +105,20 @@ class Game extends React.Component {
     }
 
     return (
-      <div className="container-fluid">
-        <h2 class="red-text text-center">Ta Te Tsoft</h2>
-        <div className="game">
-          <div className="game-board">
-            <Board
-              squares={current.squares}
-              onClick={(i) => this.handleClick(i)}
-            />
-          </div>
-          <div className="game-info">
-            <div>{status}</div>
-            <ol>{moves}</ol>
+      <div className="">
+        <h2 class="red-text text-center ">Ta Te Tsoft</h2>
+        <div className>
+          <div className="game ">
+            <div className="game-board">
+              <Board
+                squares={current.squares}
+                onClick={(i) => this.handleClick(i)}
+              />
+            </div>
+            <div className="game-info red-text text-center">
+              <div>{status}</div>
+              <ol>{moves}</ol>
+            </div>
           </div>
         </div>
       </div>
