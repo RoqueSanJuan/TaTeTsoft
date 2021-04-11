@@ -92,29 +92,33 @@ class Game extends React.Component {
                         : 'Iniciar';
       return (
           <li key={move}>
-            <button onClick={() => this.jumpTo(move)}>{desc}</button>
+            <button className="btn" onClick={() => this.jumpTo(move)}>{desc}</button>
           </li>
       );
     });
 
     let status;
     if (winner) {
-      status = 'Gandor: ' + winner;
+      status = 'Ganador: ' + winner;
     } else {
-      status = 'Jugador Siguiente: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Jugador siguiente: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
+    //<img src="https://www.tsoftglobal.com/wp-content/uploads/2020/08/LOGO-Tsoft-Alpha-FullColor.png" className="img-responsive"></img>
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-        </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
+      <div className="container-fluid">
+        <h2 class="red-text text-center">Ta Te Tsoft</h2>
+        <div className="game">
+          <div className="game-board">
+            <Board
+              squares={current.squares}
+              onClick={(i) => this.handleClick(i)}
+            />
+          </div>
+          <div className="game-info">
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
       </div>
     );
@@ -124,7 +128,7 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+    <Game />,
   document.getElementById('root')
 );
 
