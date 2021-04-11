@@ -92,34 +92,29 @@ class Game extends React.Component {
                         : 'Iniciar';
       return (
           <li key={move}>
-            <button className="btn" onClick={() => this.jumpTo(move)}>{desc}</button>
+            <button onClick={() => this.jumpTo(move)}>{desc}</button>
           </li>
       );
     });
 
     let status;
     if (winner) {
-      status = 'Ganador: ' + winner;
+      status = 'Gandor: ' + winner;
     } else {
-      status = 'Jugador siguiente: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Jugador Siguiente: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
     return (
-      <div className="">
-        <h2 class="red-text text-center ">Ta Te Tsoft</h2>
-        <div className>
-          <div className="game ">
-            <div className="game-board">
-              <Board
-                squares={current.squares}
-                onClick={(i) => this.handleClick(i)}
-              />
-            </div>
-            <div className="game-info red-text text-center">
-              <div>{status}</div>
-              <ol>{moves}</ol>
-            </div>
-          </div>
+      <div className="game">
+        <div className="game-board">
+          <Board
+            squares={current.squares}
+            onClick={(i) => this.handleClick(i)}
+          />
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
@@ -129,7 +124,7 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
-    <Game />,
+  <Game />,
   document.getElementById('root')
 );
 
